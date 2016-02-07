@@ -120,6 +120,11 @@ namespace MediaToolkit
                 commandBuilder.Append(" -profile:v baseline ");
             }
 
+            if (conversionOptions.AdditionalOptions != null)
+            {
+                commandBuilder.AppendFormat(" {0} ", conversionOptions.AdditionalOptions);
+            }
+
             return commandBuilder.AppendFormat(" \"{0}\" ", outputFile.Filename).ToString();
         }
     }

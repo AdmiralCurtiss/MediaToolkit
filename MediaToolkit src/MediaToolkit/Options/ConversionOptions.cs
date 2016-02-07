@@ -94,6 +94,11 @@ namespace MediaToolkit.Options
         ///     Specifies wheter or not to use H.264 Baseline Profile
         /// </summary>
         public bool BaselineProfile { get; set; }
+
+        /// <summary>
+        ///     Additional ffmpeg command line switches
+        /// </summary>
+        public string AdditionalOptions = null;
     }
 
 }
