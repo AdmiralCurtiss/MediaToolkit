@@ -76,7 +76,7 @@
         {
             string directory = Path.GetDirectoryName(this.FFmpegFilePath) ?? Directory.GetCurrentDirectory(); ;
 
-            if (!Directory.Exists(directory))
+            if (directory != "" && !Directory.Exists(directory))
             {
                 Directory.CreateDirectory(directory);
             }
