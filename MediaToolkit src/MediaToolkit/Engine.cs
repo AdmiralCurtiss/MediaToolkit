@@ -294,10 +294,10 @@
                 this.FFmpegProcess.BeginErrorReadLine();
                 this.FFmpegProcess.WaitForExit();
 
-                if ((this.FFmpegProcess.ExitCode != 0 && this.FFmpegProcess.ExitCode != 1) || caughtException != null)
+                if (this.FFmpegProcess.ExitCode != 0 || caughtException != null)
                 {
                     throw new Exception(
-                        this.FFmpegProcess.ExitCode + ": " + receivedMessagesLog[1] + receivedMessagesLog[0],
+                        "FFmpeg failed with exit code " + this.FFmpegProcess.ExitCode + ": " + receivedMessagesLog[0],
                         caughtException);
                 }
             }
